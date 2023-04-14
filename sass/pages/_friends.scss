@@ -1,0 +1,98 @@
+@use "../helpers/mixins" as mixins;
+@use "../layout/grid" as grid;
+@use "../helpers/variables" as var;
+
+.content {
+  .friends {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .friends-container {
+      grid-gap: 1rem;
+      @include mixins.responsive(mobile) {
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        .card-header {
+          position: relative;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 15px;
+          img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+          }
+          h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+          }
+          p {
+            color: var.$grayColor;
+            font-size: 14px;
+          }
+          .icons {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: flex;
+            div {
+              color: var.$grayColor;
+              background-color: #eee;
+              padding: 10px;
+              @include mixins.circle(35px);
+              @include mixins.flex;
+              margin-left: 5px;
+              transition: 0.5s;
+              &:hover {
+                background-color: var.$blueAltColor;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .card-body {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 0;
+          > div {
+            font-size: 14px;
+            div {
+              margin-bottom: 10px;
+              i {
+                width: 25px;
+              }
+            }
+          }
+          .vip {
+            color: var.$orangeColor;
+            font-size: 40px;
+            font-weight: bold;
+            opacity: 0.2;
+          }
+        }
+        .card-footer {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding: 15px 0;
+          span {
+            font-size: 14px;
+            color: var.$grayColor;
+          }
+          div {
+            button:last-child {
+              background-color: var.$redColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

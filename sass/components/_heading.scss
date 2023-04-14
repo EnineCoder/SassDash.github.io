@@ -1,0 +1,29 @@
+@use "../helpers/variables" as var;
+
+.heading {
+  font-size: 32px;
+  margin: 0px 0px 30px;
+  position: relative;
+}
+
+.heading::before,
+.heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 45px;
+  width: 130px;
+  height: 3px;
+  background-color: #fff;
+}
+.heading::after {
+  width: 40px;
+  background-color: #000;
+}
+
+.hr {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 2px;
+  border: none;
+}

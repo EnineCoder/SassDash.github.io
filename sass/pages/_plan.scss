@@ -1,0 +1,86 @@
+@use "../helpers/mixins" as mixins;
+@use "../helpers/variables" as var;
+
+.content {
+  .plans {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .plan-container {
+      display: grid;
+      grid-gap: 1rem;
+      @include mixins.responsive(large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+      }
+      .card {
+        background-color: #fff;
+        header {
+          background-color: var.$greenColor;
+          text-align: center;
+          color: #fff;
+          padding: 25px;
+          border: 3px solid #fff;
+          outline: 3px solid var.$greenColor;
+          h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+          span {
+            font-size: 40px;
+            font-weight: bold;
+          }
+        }
+        ul {
+          margin: 15px 0;
+
+          li {
+            display: grid;
+            grid-template-columns: 30px auto 1fr;
+            align-items: center;
+            padding: 15px 0;
+            font-size: 15px;
+            i:first-child {
+              font-size: 18px;
+            }
+            i:last-child {
+              justify-self: flex-end;
+              color: var.$grayColor;
+            }
+            .fa-check {
+              color: var.$greenColor;
+            }
+            .fa-xmark {
+              color: var.$redColor;
+            }
+          }
+        }
+        a {
+          font-size: 18px;
+        }
+        footer {
+          text-align: center;
+          color: var.$grayColor;
+        }
+        &:nth-of-type(1) {
+          a {
+            background-color: var.$greenColor;
+          }
+        }
+        &:nth-of-type(2) {
+          header {
+            background-color: var.$blueAltColor;
+            outline-color: var.$blueAltColor;
+          }
+        }
+        &:nth-of-type(3) {
+          header {
+            background-color: var.$orangeColor;
+            outline-color: var.$orangeColor;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@use "../helpers/mixins" as mixins;
+@use "../layout/grid" as grid;
+@use "../helpers/variables" as var;
+
+.page {
+  display: flex;
+  background-color: var.$mainBackgroundColor;
+  .sidebar {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    min-width: 215px;
+    box-shadow: 0 0 10px #ddd;
+    @include mixins.responsive(mobile) {
+      min-width: 62px;
+      padding: 10px;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      @include mixins.responsive(mobile) {
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+      @include mixins.responsive(small) {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #000;
+        }
+        &::before {
+          width: 80px;
+          height: 2px;
+          bottom: -20px;
+        }
+        &::after {
+          width: 12px;
+          height: 12px;
+          bottom: -29px;
+          border-radius: 50%;
+          border: 4px solid #fff;
+        }
+      }
+    }
+    ul {
+      li {
+        transition: 0.3s;
+        a {
+          display: flex;
+          align-items: center;
+          color: #000;
+          margin-bottom: 5px;
+          span {
+            margin-left: 10px;
+            @include mixins.responsive(mobile) {
+              display: none;
+            }
+          }
+        }
+        &:hover,
+        &.active {
+          background-color: #f6f6f6;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+  .content {
+    flex: auto;
+    & > .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      div:nth-of-type(1) {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        i:nth-of-type(1) {
+          margin-right: 5px;
+          font-weight: 900;
+          color: var.$grayColor;
+          font-size: 14px;
+        }
+        input {
+          border: none;
+          width: 110px;
+          transition: 0.3s;
+          &:focus {
+            outline: none;
+            width: 160px;
+          }
+        }
+        i:nth-of-type(2) {
+          margin-left: 10px;
+          color: var.$blueColor;
+          font-size: 13px;
+          cursor: pointer;
+          display: none;
+        }
+      }
+      div:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        position: relative;
+        i {
+          margin-right: 15px;
+          font-size: 20px;
+        }
+        span {
+          @include mixins.circle(10px);
+          background-color: indianred;
+          position: absolute;
+          left: 10px;
+          top: 0px;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}

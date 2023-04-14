@@ -1,0 +1,66 @@
+@use "../helpers/mixins" as mixins;
+@use "../layout/grid" as grid;
+@use "../helpers/variables" as var;
+
+.content {
+  .courses {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .course-container {
+      grid-gap: 1rem;
+      @media (max-width: 400px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .card {
+        border-radius: 8px;
+        background-color: #fff;
+        .card-header {
+          position: relative;
+          img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+          }
+          img:last-child {
+            width: 60px;
+            padding: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+          }
+        }
+        .card-info {
+          padding: 15px;
+          height: 130px;
+          @media (max-width: 400px) {
+            height: 165px;
+          }
+          h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+          }
+          p {
+            color: var.$grayColor;
+            font-size: 15px;
+          }
+        }
+        .card-footer {
+          padding: 15px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 15px;
+          color: var.$grayColor;
+          position: relative;
+          button {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+@use "../helpers/mixins" as mixins;
+@use "../layout/grid" as grid;
+@use "../helpers/variables" as var;
+
+.content {
+  .profile {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .heading {
+      @include mixins.responsive(mobile) {
+        margin-left: 10px;
+      }
+    }
+    .profile-container {
+      display: grid;
+      grid-gap: 1rem;
+      @include mixins.responsive(small) {
+        grid-template-columns: repeat(1fr, 3);
+      }
+      > .box {
+        background-color: #fff;
+        border-radius: 8px;
+        &:nth-of-type(1) {
+          @include mixins.responsive(small) {
+            grid-column: span 3;
+          }
+          display: flex;
+          align-items: center;
+          @include mixins.responsive(mobile) {
+            flex-direction: column;
+          }
+          .profile-info {
+            padding: 30px;
+            @include mixins.responsive(mobile) {
+              padding: 15px;
+            }
+            text-align: center;
+            img {
+              width: 120px;
+            }
+            h4 {
+              font-size: 18px;
+            }
+            span {
+              margin: 5px 0;
+              display: block;
+              color: var.$grayColor;
+              &:nth-of-type(2) {
+                font-size: 13px;
+              }
+            }
+            .progress {
+              background-color: #f9f9f9;
+              padding: 3px;
+              border-radius: 25px;
+              margin: 10px 0;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 60%;
+                height: 5px;
+                border-radius: 25px;
+                background-color: var.$blueAltColor;
+              }
+            }
+            .icons {
+              i {
+                color: var.$orangeColor;
+                font-size: 13px;
+              }
+            }
+          }
+          .info {
+            width: 100%;
+            position: relative;
+            @include mixins.responsive(small) {
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 2px;
+                height: 270px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #eee;
+              }
+            }
+            .box {
+              padding: 15px;
+              transition: 0.5s;
+              @include mixins.responsive(mobile) {
+                text-align: center;
+              }
+              &:hover {
+                background-color: #f9f9f9;
+              }
+              h4 {
+                margin-bottom: 10px;
+                color: var.$grayColor;
+              }
+              .profile-holder {
+                @include mixins.responsive(mobile) {
+                  grid-template-columns: 1fr;
+                  justify-items: center;
+                }
+                div {
+                  display: flex;
+                  font-size: 15px;
+                  span {
+                    color: var.$grayColor;
+                  }
+                }
+                .icon-switch {
+                  max-width: 80px;
+                  height: 20px;
+                  .switch {
+                    @include mixins.circle(13px);
+                    left: 63px;
+                    @include mixins.responsive(mobile) {
+                      left: 50px;
+                    }
+                    &.move {
+                      left: 2px;
+                    }
+                    i {
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+              &:nth-of-type(even) {
+                .icon-switch {
+                  background-color: #ccc;
+                }
+              }
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          > h3 {
+            margin-bottom: 5px;
+          }
+          > p {
+            @include mixins.responsive(small) {
+              margin-bottom: 15px;
+            }
+          }
+          div {
+            padding: 10px;
+            display: flex;
+            gap: 0.5rem;
+            @include mixins.responsive(mobile) {
+              justify-content: center;
+              flex-wrap: wrap;
+            }
+            span {
+              background-color: #eee;
+              padding: 5px 10px;
+              border-radius: 5px;
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          @include mixins.responsive(small) {
+            grid-column: span 2;
+          }
+          padding-top: 15px;
+          > p {
+            padding: 0 15px;
+            @include mixins.responsive(small) {
+              margin-bottom: 15px;
+            }
+          }
+          > h3 {
+            padding: 0 15px;
+            margin-bottom: 5px;
+          }
+          > .box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            @include mixins.responsive(mobile) {
+              flex-direction: column;
+              align-items: center;
+            }
+            .info {
+              display: flex;
+              align-items: center;
+              @include mixins.responsive(mobile) {
+                flex-direction: column;
+                text-align: center;
+              }
+              img {
+                width: 60px;
+              }
+              div {
+                margin-left: 1rem;
+                @include mixins.responsive(mobile) {
+                  margin-left: 0;
+                }
+                h4 {
+                  margin-bottom: 10px;
+                  @include mixins.responsive(mobile) {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                  }
+                }
+                p {
+                  color: var.$grayColor;
+                }
+              }
+            }
+            .date {
+              span {
+                display: block;
+                @include mixins.responsive(mobile) {
+                  text-align: center;
+                }
+                &:last-child {
+                  color: var.$grayColor;
+                  margin-top: 10px;
+                  @include mixins.responsive(mobile) {
+                    margin-top: 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

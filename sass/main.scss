@@ -1,0 +1,27 @@
+@forward "./pages/global";
+
+@forward "./pages/home";
+
+@forward "./layout/header";
+
+@forward "./components/heading";
+
+@forward "./components/buttons";
+
+@forward "./pages/settings";
+
+@forward "./pages/profile";
+
+@forward "./pages/projects";
+
+@forward "./pages/courses";
+
+@forward "./pages/friends";
+
+@forward "./pages/files";
+
+@forward "./pages/plan";
+
+// They act the same when we want to load a file but we can't use @forward to load mixins or variable
+
+// sass --watch sass/main.scss:css/main.css

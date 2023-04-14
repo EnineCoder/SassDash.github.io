@@ -1,0 +1,164 @@
+@use "../helpers/mixins" as mixins;
+@use "../helpers/variables" as var;
+
+.content {
+  .files {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .file-container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-gap: 1rem;
+      @include mixins.responsive(mobile) {
+        grid-template-columns: 1fr;
+      }
+      .cards {
+        @include mixins.responsive(mobile) {
+          order: 2;
+        }
+        .card {
+          background-color: #fff;
+          position: relative;
+          padding: 15px;
+          border-radius: 8px;
+          font-size: 14px;
+          color: var.$grayColor;
+          .card-header {
+            text-align: center;
+            margin-bottom: 15px;
+            img {
+              width: 60px;
+              transition: 0.5s;
+              &:hover {
+                transform: rotate(15deg);
+              }
+            }
+            h4 {
+              margin-top: 5px;
+              font-size: 16px;
+              font-weight: normal;
+              color: #000;
+            }
+            i {
+              position: absolute;
+              top: 10px;
+              left: 10px;
+            }
+          }
+          .card-body {
+            margin-bottom: 10px;
+          }
+          .card-footer {
+            padding: 10px 0 0 0;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+      aside {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        height: 400px;
+        min-width: 260px;
+        @include mixins.responsive(mobile) {
+          order: 1;
+        }
+        h3 {
+          font-size: 24px;
+          margin-bottom: 15px;
+        }
+        .holder {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+          border: 2px solid #f9f9f9;
+          padding: 10px;
+          color: var.$grayColor;
+          font-size: 12px;
+          border-radius: 8px;
+          .box {
+            display: flex;
+            align-items: center;
+            .image {
+              background-color: rgb(0 117 255 / 20%);
+              width: 40px;
+              height: 40px;
+              @include mixins.flex;
+              margin-right: 10px;
+              i {
+                color: var.$blueAltColor;
+              }
+            }
+            .info {
+              h5 {
+                color: #000;
+                font-size: 13px;
+                margin-bottom: 5px;
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            .image {
+              background-color: rgba(245, 158, 11, 0.2);
+              i {
+                color: var.$orangeColor;
+              }
+            }
+          }
+          &:nth-of-type(3) {
+            .image {
+              background-color: rgb(34 197 94 / 20%);
+              i {
+                color: var.$greenColor;
+              }
+            }
+          }
+          &:nth-of-type(4) {
+            .image {
+              background-color: rgb(244 67 54 / 20%);
+              i {
+                color: var.$redColor;
+              }
+            }
+          }
+        }
+        .upload {
+          background-color: var.$blueAltColor;
+          color: #fff;
+          padding: 10px 15px;
+          border-radius: 5px;
+          font-size: 14px;
+          margin: 10px auto;
+          display: block;
+          width: fit-content;
+          opacity: 0.8;
+          transition: 0.5s;
+          &:hover {
+            opacity: 1;
+          }
+          &:hover i {
+            animation: movingup 1s ease-in-out infinite;
+          }
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixins.keyFrame(movingup) {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}

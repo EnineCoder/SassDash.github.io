@@ -1,0 +1,69 @@
+@use "../helpers/mixins" as mixins;
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  @include mixins.responsive(small) {
+    width: 750px;
+  }
+  @include mixins.responsive(meduim) {
+    width: 970px;
+  }
+  @include mixins.responsive(large) {
+    width: 1170px;
+  }
+}
+
+$size: 200;
+@for $i from 1 to 4 {
+  .grid-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($size + px, 1fr));
+    grid-gap: 0.5rem;
+  }
+  $size: $size + 50;
+}
+
+@for $i from 1 to 45 {
+  .fs-#{$i} {
+    font-size: $i + px;
+  }
+}
+@for $i from 1 to 25 {
+  .p-#{$i} {
+    padding: $i + px;
+  }
+}
+@for $i from 1 to 25 {
+  .m-#{$i} {
+    margin: $i + px;
+  }
+}
+@for $i from 1 to 20 {
+  .rad-#{$i} {
+    border-radius: $i + px;
+  }
+}
+@for $i from 1 to 10 {
+  .opac-#{$i} {
+    opacity: calc($i / 2);
+  }
+}
+
+@for $i from 1 to 5 {
+  .left-#{$i} {
+    left: -$i * 20px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+.line-th {
+  text-decoration: line-through;
+}

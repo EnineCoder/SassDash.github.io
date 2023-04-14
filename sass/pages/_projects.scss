@@ -1,0 +1,192 @@
+@use "../helpers/mixins" as mixins;
+@use "../layout/grid" as grid;
+@use "../helpers/variables" as var;
+
+.content {
+  .projects {
+    @include mixins.responsive(mobile) {
+      padding: 5px;
+    }
+    .project-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      @include mixins.responsive(large) {
+        grid-template-columns: 1fr 1fr;
+      }
+      > .box {
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+        .date {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-size: 13px;
+          color: var.$grayColor;
+        }
+        .title {
+          h4 {
+            font-size: 17px;
+            font-weight: normal;
+            margin-bottom: 5px;
+          }
+          p {
+            color: var.$grayColor;
+            font-size: 15px;
+            margin-bottom: 40px;
+          }
+          .images {
+            margin: 20px 0;
+            img {
+              width: 40px;
+              border-radius: 50%;
+              position: relative;
+              background-color: #fff;
+              padding: 2px;
+            }
+          }
+        }
+        .skills {
+          display: flex;
+          justify-content: end;
+          margin: 15px 0;
+          @include mixins.responsive(mobile) {
+            flex-direction: column;
+            justify-content: start;
+          }
+          span {
+            background-color: #eeee;
+            padding: 4px 7px;
+            font-size: 13px;
+            border-radius: 8px;
+            margin-left: 5px;
+            @include mixins.responsive(mobile) {
+              margin-left: 0;
+              margin-bottom: 5px;
+              width: fit-content;
+            }
+          }
+        }
+        .progress {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 15px;
+          @include mixins.responsive(mobile) {
+            flex-direction: column;
+            justify-content: center;
+          }
+          div {
+            width: 250px;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 25px;
+            position: relative;
+            @include mixins.responsive(mobile) {
+              margin-bottom: 10px;
+              width: 80%;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              border-radius: 25px;
+              background-color: var.$greenColor;
+            }
+          }
+          span {
+            font-size: 15px;
+            color: var.$grayColor;
+          }
+        }
+        &:nth-of-type(1) {
+          .progress {
+            div {
+              &::before {
+                width: 50%;
+                background-color: var.$redColor;
+              }
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          .progress {
+            div {
+              &::before {
+                width: 80%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          .progress {
+            div {
+              &::before {
+                width: 100%;
+                background-color: var.$blueAltColor;
+              }
+            }
+          }
+        }
+        &:nth-of-type(4) {
+          .progress {
+            div {
+              &::before {
+                width: 60%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(5) {
+          .progress {
+            div {
+              &::before {
+                width: 70%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(6) {
+          .progress {
+            div {
+              &::before {
+                width: 40%;
+                background-color: var.$redColor;
+              }
+            }
+          }
+        }
+        &:nth-of-type(7) {
+          .progress {
+            div {
+              &::before {
+                width: 70%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(8) {
+          .progress {
+            div {
+              &::before {
+                width: 60%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(9) {
+          .progress {
+            div {
+              &::before {
+                width: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

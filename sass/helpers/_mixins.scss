@@ -1,0 +1,87 @@
+// Mixins For Responsive
+@mixin responsive($point) {
+  @if $point == "mobile" {
+    @media (max-width: 778px) {
+      @content;
+    }
+  } @else if $point == "max-mobile" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == "small" {
+    @media (min-width: 778px) {
+      @content;
+    }
+  } @else if $point == "meduim" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Mixins For Prefix
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Mixin For Circle
+@mixin circle($dimention) {
+  width: $dimention;
+  height: $dimention;
+  border-radius: 50%;
+}
+
+// Mixin For Animation
+
+@mixin keyFrame($anime-name) {
+  @-webkit-keyframes #{$anime-name} {
+    @content;
+  }
+  @-moz-keyframes #{$anime-name} {
+    @content;
+  }
+  @keyframes #{$anime-name} {
+    @content;
+  }
+}
+
+// Mixin for Flex
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for overlay
+
+@mixin overlay($color, $alpha) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color;
+  opacity: $alpha;
+}
+
+@mixin triangle($direction, $size, $color) {
+  width: 0;
+  height: 0;
+  border: $size solid transparent;
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  }
+}
