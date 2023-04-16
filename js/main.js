@@ -1,22 +1,3 @@
-// Handling clicking on the sidebar icon
-let sidebarLinks = document.querySelectorAll(".sidebar ul li");
-
-sidebarLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    // e.preventDefault();
-    sidebarLinks.forEach((link) => {
-      link.classList.remove("active");
-    });
-    link.classList.add("active");
-
-    setTimeout(() => {
-      if (link.querySelector("a").href) {
-        console.log("One");
-      }
-    }, 0);
-  });
-});
-
 let mainInput = document.querySelector(".info input");
 let cancelIcon = document.querySelector(".info .fa-solid");
 
