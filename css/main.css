@@ -1344,7 +1344,7 @@ a {
     display: none;
   }
 }
-.page .sidebar ul li:hover, .page .sidebar ul li.active {
+.page .sidebar ul li a:hover, .page .sidebar ul li a.active {
   background-color: #f6f6f6;
   border-radius: 6px;
 }
