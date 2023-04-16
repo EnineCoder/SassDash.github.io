@@ -38,6 +38,10 @@
           }
           .images {
             margin: 20px 0;
+            display: flex;
+            @include mixins.responsive(mobile) {
+              margin: 0;
+            }
             img {
               width: 40px;
               border-radius: 50%;

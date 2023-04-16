@@ -3,13 +3,16 @@ let sidebarLinks = document.querySelectorAll(".sidebar ul li");
 
 sidebarLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     sidebarLinks.forEach((link) => {
       link.classList.remove("active");
     });
     link.classList.add("active");
+
     setTimeout(() => {
-      window.location.href = link.querySelector("a").href;
+      if (link.querySelector("a").href) {
+        console.log("One");
+      }
     }, 0);
   });
 });

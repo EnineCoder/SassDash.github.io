@@ -653,7 +653,9 @@ a {
   }
 }
 .content .dashboard .dashboard-container > .box:nth-of-type(1) > div:nth-of-type(2) .image img {
-  max-width: 100%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
 }
 .content .dashboard .dashboard-container > .box:nth-of-type(1) > div:nth-of-type(2) .info {
   display: flex;
@@ -1300,7 +1302,7 @@ a {
 }
 @media (max-width: 778px) {
   .page .sidebar h3 {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 15px;
   }
 }
@@ -1388,14 +1390,15 @@ a {
   position: relative;
 }
 .page .content > .info div:nth-of-type(2) i {
-  margin-right: 15px;
+  margin-right: 10px;
   font-size: 20px;
+  margin-top: 3px;
 }
 .page .content > .info div:nth-of-type(2) span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: indianred;
+  background-color: #f44336;
   position: absolute;
   left: 10px;
   top: 0px;
@@ -1403,6 +1406,7 @@ a {
 .page .content > .info div:nth-of-type(2) img {
   width: 35px;
   height: 35px;
+  border-radius: 50%;
 }
 
 .heading {
@@ -1835,6 +1839,8 @@ a {
 }
 .content .profile .profile-container > .box:nth-of-type(1) .profile-info img {
   width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }
 .content .profile .profile-container > .box:nth-of-type(1) .profile-info h4 {
   font-size: 18px;
@@ -2083,6 +2089,12 @@ a {
 }
 .content .projects .project-container > .box .title .images {
   margin: 20px 0;
+  display: flex;
+}
+@media (max-width: 778px) {
+  .content .projects .project-container > .box .title .images {
+    margin: 0;
+  }
 }
 .content .projects .project-container > .box .title .images img {
   width: 40px;
