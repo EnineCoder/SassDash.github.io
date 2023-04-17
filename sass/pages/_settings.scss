@@ -5,12 +5,7 @@
 .content {
   .settings {
     @include mixins.responsive(mobile) {
-      padding: 5px;
-    }
-    .heading {
-      @include mixins.responsive(mobile) {
-        margin-left: 10px;
-      }
+      padding: 10px;
     }
     .settings-container {
       display: grid;

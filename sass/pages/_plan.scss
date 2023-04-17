@@ -4,7 +4,7 @@
 .content {
   .plans {
     @include mixins.responsive(mobile) {
-      padding: 5px;
+      padding: 10px;
     }
     .plan-container {
       display: grid;

@@ -4,7 +4,7 @@
 .content {
   .files {
     @include mixins.responsive(mobile) {
-      padding: 5px;
+      padding: 10px;
     }
     .file-container {
       display: grid;

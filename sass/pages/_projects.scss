@@ -5,7 +5,7 @@
 .content {
   .projects {
     @include mixins.responsive(mobile) {
-      padding: 5px;
+      padding: 10px;
     }
     .project-container {
       display: grid;

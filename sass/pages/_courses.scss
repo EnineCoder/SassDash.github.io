@@ -5,7 +5,7 @@
 .content {
   .courses {
     @include mixins.responsive(mobile) {
-      padding: 5px;
+      padding: 10px;
     }
     .course-container {
       grid-gap: 1rem;

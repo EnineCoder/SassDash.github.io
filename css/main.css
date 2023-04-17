@@ -586,12 +586,7 @@ a {
 
 @media (max-width: 778px) {
   .content .dashboard {
-    padding: 5px;
-  }
-}
-@media (max-width: 778px) {
-  .content .dashboard .heading {
-    margin-left: 10px;
+    padding: 10px;
   }
 }
 .content .dashboard .dashboard-container {
@@ -1490,12 +1485,7 @@ a {
 
 @media (max-width: 778px) {
   .content .settings {
-    padding: 5px;
-  }
-}
-@media (max-width: 778px) {
-  .content .settings .heading {
-    margin-left: 10px;
+    padding: 10px;
   }
 }
 .content .settings .settings-container {
@@ -1793,12 +1783,7 @@ a {
 }
 @media (max-width: 778px) {
   .content .profile {
-    padding: 5px;
-  }
-}
-@media (max-width: 778px) {
-  .content .profile .heading {
-    margin-left: 10px;
+    padding: 10px;
   }
 }
 .content .profile .profile-container {
@@ -2052,7 +2037,7 @@ a {
 
 @media (max-width: 778px) {
   .content .projects {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .content .projects .project-container {
@@ -2199,7 +2184,7 @@ a {
 
 @media (max-width: 778px) {
   .content .courses {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .content .courses .course-container {
@@ -2264,7 +2249,7 @@ a {
 
 @media (max-width: 778px) {
   .content .friends {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .content .friends .friends-container {
@@ -2361,7 +2346,7 @@ a {
 
 @media (max-width: 778px) {
   .content .files {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .content .files .file-container {
@@ -2540,7 +2525,7 @@ a {
 }
 @media (max-width: 778px) {
   .content .plans {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .content .plans .plan-container {

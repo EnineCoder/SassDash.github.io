@@ -5,12 +5,7 @@
 .content {
   .profile {
     @include mixins.responsive(mobile) {
-      padding: 5px;
-    }
-    .heading {
-      @include mixins.responsive(mobile) {
-        margin-left: 10px;
-      }
+      padding: 10px;
     }
     .profile-container {
       display: grid;
