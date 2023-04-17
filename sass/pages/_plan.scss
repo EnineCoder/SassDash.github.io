@@ -3,9 +3,6 @@
 
 .content {
   .plans {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .plan-container {
       display: grid;
       grid-gap: 1rem;

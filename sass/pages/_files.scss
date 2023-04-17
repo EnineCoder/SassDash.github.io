@@ -3,9 +3,6 @@
 
 .content {
   .files {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .file-container {
       display: grid;
       grid-template-columns: 3fr 1fr;

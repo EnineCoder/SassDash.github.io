@@ -4,9 +4,6 @@
 
 .content {
   .projects {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .project-container {
       display: grid;
       grid-template-columns: 1fr;

@@ -4,9 +4,6 @@
 
 .content {
   .profile {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .profile-container {
       display: grid;
       grid-gap: 1rem;

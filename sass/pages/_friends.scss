@@ -4,9 +4,6 @@
 
 .content {
   .friends {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .friends-container {
       grid-gap: 1rem;
       @include mixins.responsive(mobile) {

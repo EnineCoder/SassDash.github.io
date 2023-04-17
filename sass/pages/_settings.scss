@@ -4,9 +4,6 @@
 
 .content {
   .settings {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .settings-container {
       display: grid;
       grid-gap: 1rem;

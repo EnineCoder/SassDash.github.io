@@ -4,9 +4,6 @@
 
 .content {
   .dashboard {
-    @include mixins.responsive(mobile) {
-      padding: 10px;
-    }
     .dashboard-container {
       display: grid;
       grid-gap: 1rem;
