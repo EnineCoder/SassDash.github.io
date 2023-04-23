@@ -554,6 +554,10 @@
             background-color: rgba(0, 117, 255, 0.2);
             margin-bottom: 10px;
             padding-right: 10px;
+            a {
+              font-size: 14px;
+              padding: 3px 10px;
+            }
             div {
               display: flex;
               align-items: center;
@@ -589,6 +593,11 @@
               }
             }
           }
+          .box:nth-of-type(1) {
+            > a {
+              background-color: #1da1f2;
+            }
+          }
           .box:nth-of-type(3) {
             background-color: rgb(255 0 0 / 20%);
             div {
@@ -599,7 +608,7 @@
                 color: var.$redColor;
               }
             }
-            > span {
+            > a {
               background-color: var.$redColor;
             }
           }
